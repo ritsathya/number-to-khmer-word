@@ -22,10 +22,9 @@ public class IntegerConversion {
             word = SINGLE_DIGIT[number.divide(ONE_HUNDRED).intValue()] + WORDS.get("HUNDRED");
 
         } else if (number.compareTo(TEN_THOUSAND) < 0) {
-            remainder = number.mod(ONE_HUNDRED);
-//            word = SINGLE_DIGIT[number.divide(ONE_THOUSAND).intValue()] + WORDS.get("THOUSAND");
-            word = integerToWord(number.divide(ONE_HUNDRED)) + WORDS.get("HUNDRED");
-
+            remainder = number.mod(ONE_THOUSAND);
+            word = SINGLE_DIGIT[number.divide(ONE_THOUSAND).intValue()] + WORDS.get("THOUSAND");
+//            word = integerToWord(number.divide(ONE_HUNDRED)) + WORDS.get("HUNDRED");
 
         } else if (number.compareTo(ONE_HUNDRED_THOUSAND) < 0) {
             remainder = number.mod(ONE_THOUSAND);
