@@ -13,12 +13,14 @@ public class NumberConversionController {
 
     @GetMapping("/number-to-word")
     public String numberToWord(@RequestParam(value = "number", defaultValue = "") String number) {
+        number = number.replace(",", "");
         NumberConversion conversion = new NumberConversion();
         return conversion.numberToWord(number);
     }
 
     @GetMapping("/currency-to-word")
     public String currencyToWord(@RequestParam(value = "input", defaultValue = "") String input, @RequestParam(value = "currency", defaultValue = "") String currency) {
+        input = input.replace(",", "");
         CurrencyConversion conversion = new CurrencyConversion();
         return conversion.currencyToWord(input, currency);
     }
